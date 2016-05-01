@@ -1,0 +1,7 @@
+<meta>
+	<oop>true</oop>
+	<info author="spopo" version="1.0" name="bakaGaijinTest2" type="script" />
+	<script src="driver2.lua" type="client"  />
+	<export function="bakaGaijin_export" type="client"/>
+	<min_mta_version server="1.5.2"/>
+</meta>
