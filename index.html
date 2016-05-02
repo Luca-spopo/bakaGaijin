@@ -1,0 +1,12 @@
+Each resource maintains a list of elements it has given off as gaijins
+It also maintains a list of resources it was given off to.
+
+When a resource receives a gaijin, it informs the host resource, and the resource is marked in the host's list.
+Each resource maintains a list of elements it received as gaijin, in a weak table.
+It monitors these tokens and sends a signal to the host resource when one of them dies.
+(i.e. it is no longer usable by the resource)
+
+When the host receives such a signal, it removes that resource from the loan list
+and checks if the loan list is empty now.
+If it is empty, it stops loaning out the element.
+This table itself is weak, so if even the host resource isnt using the elem, it will get removed
