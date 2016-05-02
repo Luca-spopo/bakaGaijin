@@ -1,12 +1,35 @@
-Each resource maintains a list of elements it has given off as gaijins
-It also maintains a list of resources it was given off to.
-
-When a resource receives a gaijin, it informs the host resource, and the resource is marked in the host's list.
-Each resource maintains a list of elements it received as gaijin, in a weak table.
-It monitors these tokens and sends a signal to the host resource when one of them dies.
-(i.e. it is no longer usable by the resource)
-
-When the host receives such a signal, it removes that resource from the loan list
-and checks if the loan list is empty now.
-If it is empty, it stops loaning out the element.
-This table itself is weak, so if even the host resource isnt using the elem, it will get removed
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="bakagaijin">bakaGaijin</h1>
+<p>Script for Multi Theft Auto to allow seamless cross-resource communication across Lua virtual machines.</p>
+<h2 id="overview">Overview</h2>
+<p>bakaGaijin is a script that provides an interface for your resources to communicate with each other.<br />
+Whereas traditional cross-resource communication results in tables being passed by value, and loss of certain information that cannot be serialized (functions and metamethods), bakaGaijin keeps the original object stored in the host resource itself, and sends a proxy object that can be used by other resources to request the host resource to perform operations on the original object.<br />
+This means that functions can be passed from one resource to another, tables can be passed by value and metatable operations still work, among other things.<br />
+The catch is, that the host resource must be running for another resource to use a function or table it received from the host resource.</p>
+<p>bakaGaijin consists of:</p>
+<ul>
+<li>bakaGaijin.lua, a script file that let’s a resource use bakaGaijin to communicate with other resources using the same version of bakaGaijin.</li>
+<li>bakaGaijin resource, an optional resource that exports the function “use” which returns a string consisting of all the code in bakaGaijin.lua. You can use this with loadstring to load the library without including the script file. Useful to keep all your resources running the same version of bakaGaijin without manually changing their files.</li>
+<li>bakaGaijinTest1 and bakaGaijinTest2, resources that test and highlight all the features provided by bakaGaijin.</li>
+</ul>
+<h2 id="how-to-use-it">How to use it</h2>
+<p>You can find examples <a href="howto.html">here</a>.</p>
+<h2 id="download">Download</h2>
+<p>You can download the latest version of bakaGaijin directly from its <a href="https://github.com/Luca-spopo/bakaGaijin">GitHub repository.<br />
+Click the link</a> and click “Download ZIP” on the top right corner.<br />
+This will download the main resource and two example test resources.<br />
+If you wish to use bakaGaijin.lua directly, it is located in the bakaGaijin folder in the same zip file.</p>
+<h2 id="credits">Credits</h2>
+<p>bakaGaijin was made by Anirudh Katoch © and released under the MIT open source license.<br />
+You can contact me at katoch.anirudh(at)gmail(dot)com</p>
+</body>
+</html>
