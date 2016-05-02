@@ -13,7 +13,7 @@
 <h2 id="overview">Overview</h2>
 <p>bakaGaijin is a script that provides an interface for your resources to communicate with each other.<br />
 Whereas traditional cross-resource communication results in tables being passed by value, and loss of certain information that cannot be serialized (functions and metamethods), bakaGaijin keeps the original object stored in the host resource itself, and sends a proxy object that can be used by other resources to request the host resource to perform operations on the original object.<br />
-This means that functions can be passed from one resource to another, tables can be passed by value and metatable operations still work, among other things.<br />
+This means that functions can be passed from one resource to another, tables can be passed by reference and metatable operations still work, among other things.<br />
 The catch is, that the host resource must be running for another resource to use a function or table it received from the host resource.</p>
 <p>bakaGaijin consists of:</p>
 <ul>
@@ -23,9 +23,12 @@ The catch is, that the host resource must be running for another resource to use
 </ul>
 <h2 id="how-to-use-it">How to use it</h2>
 <p>You can find examples <a href="howto.html">here</a>.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>You can find documentation about how it works <a href="magic.html">here</a>.<br />
+Further detailed documentation is in the <a href="https://github.com/Luca-spopo/bakaGaijin/blob/master/bakaGaijin/bakaGaijin.lua">source code</a> itself.</p>
 <h2 id="download">Download</h2>
-<p>You can download the latest version of bakaGaijin directly from its <a href="https://github.com/Luca-spopo/bakaGaijin">GitHub repository.<br />
-Click the link</a> and click “Download ZIP” on the top right corner.<br />
+<p>You can fork bakaGaijin or browse its source code on it’s <a href="https://github.com/Luca-spopo/bakaGaijin">GitHub repository</a>.<br />
+Or you can <a href="https://github.com/Luca-spopo/bakaGaijin/archive/master.zip">download</a> the repo as a zip file.<br />
 This will download the main resource and two example test resources.<br />
 If you wish to use bakaGaijin.lua directly, it is located in the bakaGaijin folder in the same zip file.</p>
 <h2 id="credits">Credits</h2>

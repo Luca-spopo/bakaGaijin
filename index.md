@@ -6,7 +6,7 @@ Overview
 --------
 bakaGaijin is a script that provides an interface for your resources to communicate with each other.
 Whereas traditional cross-resource communication results in tables being passed by value, and loss of certain information that cannot be serialized (functions and metamethods), bakaGaijin keeps the original object stored in the host resource itself, and sends a proxy object that can be used by other resources to request the host resource to perform operations on the original object.
-This means that functions can be passed from one resource to another, tables can be passed by value and metatable operations still work, among other things.
+This means that functions can be passed from one resource to another, tables can be passed by reference and metatable operations still work, among other things.
 The catch is, that the host resource must be running for another resource to use a function or table it received from the host resource.
 
 bakaGaijin consists of:  
